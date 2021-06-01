@@ -7,17 +7,89 @@
     align-items: center;
     justify-content: left;
     font-family: 'Noto Sans';
+    // background: green;
     height: 70px;
 }
 
+.navIcons {
+
+
+
+
+    svg {
+        // color: red;
+        width: 200px;
+    }
+
+
+    // display: inline-block;
+    // // width: 30px;
+    // padding: 0;
+    // // padding: 5px;
+    // text-align: center;
+    // background-color: #ff005c;
+    // border-radius: 5px;
+    // align-self: center;
+    // cursor: pointer;
+    // color: white;
+}
 
 .appNavigation {
     font-size: 14px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    align-content: center;
     flex-grow: 1;
+
+    .menuItem {
+
+        // background-color: red;
+
+        position: relative;
+        cursor: pointer;
+
+
+        &:hover {
+            color: #666666;
+        }
+
+        &::after {
+            display: inline;
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 10px;
+            left: -2%;
+            bottom: 0;
+            background-image: url("../../images/underline.svg");
+            // background-color: red;
+            opacity: 0;
+            transform: translateX(-25%);
+            transition: all .3s ease-in-out;
+
+
+        }
+
+
+        &:hover::after {
+            transform: translateX(0px);
+            opacity: 1;
+            // background-image: url("../../images/underline.svg");
+
+        }
+
+
+    }
+
+
 }
+
+// .active-menu {
+//     @extend .menuItem;
+//     opacity: 1;
+//     transform: translateX(0);
+// }
 
 .hamburger {
     display: none;
@@ -35,17 +107,14 @@
 
     li {
         display: inline-block;
+        // background: yellow;
         text-decoration: none;
         margin-right: 30px;
-        line-height: 19.1px;
+        // line-height: 19.1px;
         color: #a1a1a1;
 
         a {
             text-decoration: none;
-
-            &:hover {
-                font-weight: 600;
-            }
 
             img {
                 width: 18px;
@@ -76,7 +145,7 @@
     color: black !important;
     transform: translateX(0);
     transition: all .5s ease-in-out;
-    height: 100vh;
+    height: 100%;
     overflow-y: hidden;
     min-width: 300px;
     max-width: 20vw;
@@ -105,6 +174,11 @@
             order: 2;
 
             display: inline-block;
+            text-align: center;
+
+            li {
+                display: inline;
+            }
 
 
         }
@@ -114,9 +188,16 @@
 
 
 
-@media screen and (max-width: 600px) {
+
+
+@media screen and (max-width: 768px) {
     .hamburger {
         display: block;
+
+        &:active,
+        &:visited {
+            text-decoration: none;
+        }
     }
 
     .navWrapper {
@@ -154,4 +235,12 @@
     }
 
 
+    .navIcons {
+        margin: 0;
+
+
+        svg {
+            color: white;
+        }
+    }
 }

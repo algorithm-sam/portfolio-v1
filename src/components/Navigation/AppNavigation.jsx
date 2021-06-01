@@ -22,7 +22,7 @@ export default function AppNavigation() {
         setMenuOpened(!menuOpened);
     }
     const handleWindowResize = () => {
-        if (window.innerWidth > 600) {
+        if (window.innerWidth >= 768) {
             setMenuOpened(false)
         }
     }
@@ -43,17 +43,17 @@ export default function AppNavigation() {
                 <img src={logo} alt="App Logo" className={styles.logo} />
                 <nav className={menuOpened ? styles.activeMobileMenu : styles.appNavigation}>
                     <ul className={styles.menuDesktop}>
-                        <li><a href="#"> <img src={mail} alt="Mail Icon" /> </a></li>
-                        <li><a href="#"><i className="fab fa-linkedin-in" /></a></li>
-                        <li><a href="#"><img src={twitter} alt="twitter Icon" /></a></li>
-                        <li><a href="#"><img src={github} alt="github Icon" /></a></li>
+                        <li className={styles.navIcons}><a href="mailto:test@gmail.com?subject=Let's%20talk%20business"> <i className="fa fa-envelope" alt="Mail Icon" /> </a></li>
+                        <li className={styles.navIcons}><a target="_blank" href="https://www.linkedin.com/in/oluwatobi-ohidoa/"><i className="fab fa-linkedin-in" /></a></li>
+                        <li className={styles.navIcons}><a target="_blank" href="https://twitter.com/Algorithm_Sam"><i className="fab fa-twitter" alt="twitter Icon" /></a></li>
+                        <li className={styles.navIcons}><a target="_blank" href="https://github.com/algorithm-sam"><i className="fab fa-github" alt="github Icon" /></a></li>
                     </ul>
 
                     <ul className={styles.menuDesktop}>
-                        <li><a href="//#endregion">Work</a></li>
-                        <li><a href="//#endregion">Services</a></li>
-                        <li><a href="//#endregion">Resume</a></li>
-                        <li><a href="//#endregion">Contact</a></li>
+                        <li className={styles.menuItem}><a href="//#endregion">Work</a></li>
+                        <li className={styles.menuItem}><a href="//#endregion">Services</a></li>
+                        <li className={styles.menuItem}><a href="//#endregion">Resume</a></li>
+                        <li className={styles.menuItem}><a href="//#endregion">Contact</a></li>
                     </ul>
 
                 </nav>
