@@ -1,0 +1,157 @@
+@import "../../styles/common.scss";
+
+
+.navWrapper {
+    @extend .container;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    font-family: 'Noto Sans';
+    height: 70px;
+}
+
+
+.appNavigation {
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.hamburger {
+    display: none;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    margin-right: 100px;
+}
+
+
+.menuDesktop {
+    // display: inline-block;
+
+    li {
+        display: inline-block;
+        text-decoration: none;
+        margin-right: 30px;
+        line-height: 19.1px;
+        color: #a1a1a1;
+
+        a {
+            text-decoration: none;
+
+            &:hover {
+                font-weight: 600;
+            }
+
+            img {
+                width: 18px;
+                height: 18px;
+                margin-right: 20px;
+                // color: red;
+            }
+
+            &:link,
+            &:visited,
+            &:active {
+                text-decoration: none;
+                color: inherit;
+            }
+        }
+
+        &:last-of-type {
+            margin-right: 0;
+        }
+    }
+}
+
+.activeMobileMenu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #a1a1a1;
+    color: black !important;
+    transform: translateX(0);
+    transition: all .5s ease-in-out;
+    height: 100vh;
+    overflow-y: hidden;
+    min-width: 300px;
+    max-width: 20vw;
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    top: 70px;
+    justify-content: space-between;
+    padding: 100px 20px;
+
+    .menuDesktop {
+        display: block;
+
+
+
+
+        li {
+            display: block;
+            margin-bottom: 20px;
+            color: white;
+
+
+        }
+
+        &:first-child {
+            order: 2;
+
+            display: inline-block;
+
+
+        }
+    }
+}
+
+
+
+
+@media screen and (max-width: 600px) {
+    .hamburger {
+        display: block;
+    }
+
+    .navWrapper {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    // .appNavigation {
+    //     justify-content: space-between;
+    // }
+
+    // .menu {
+    //     li {
+    //         a {
+
+    //             img {
+    //                 margin-right: 2px;
+    //             }
+    //         }
+    //     }
+    // }
+
+    .appNavigation {
+        justify-content: space-between;
+        // flex-grow: 0;
+
+    }
+
+    .logo {
+        margin-right: 20px;
+    }
+
+    .menuDesktop {
+        display: none;
+    }
+
+
+}
